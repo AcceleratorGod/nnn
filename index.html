@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        /* border: 1px solid red; */
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      /* .nav {
+        display: flex;
+        flex-direction: column;
+        background: #ffc75fa8;
+        height: 100%;
+        width: 15%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        
+      } */
+
+      #pict {
+        flex: 1;
+        background-image: url("../imge/HaiLingIslang/阳江艺术字.png");
+        background-size: cover;
+        opacity: 0.77;
+      }
+      #Rnav {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #section1,
+      #section2,
+      #section3,
+      #section4 {
+        height: 100vh;
+      }
+
+      .videos {
+        display: flex;
+        flex-direction: row;
+      }
+      .gap {
+        width: 20%;
+      }
+      .seevideo {
+        width: 80%;
+      }
+      a {
+        text-decoration: none;
+      }
+      .niceButton {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: rgba(16, 184, 214, 0.201);
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 2px #999;
+      }
+      .niceButton:hover {
+        background-color: #1795bb;
+      }
+      .niceButton:active {
+        background-color: #1795bb;
+        box-shadow: 0 2px #e0dfdf;
+        transform: translateY(4px);
+      }
+      a {
+        display: flex;
+        justify-content: center;
+      }
+      #Rnav {
+        display: flex;
+        justify-content: space-around;
+      }
+      .jianbian1 {
+        background: #d65db1;
+      }
+      .jianbian2 {
+        background: #ff6f91;
+      }
+      .jianbian3 {
+        background: #ff9671;
+      }
+      /* 手机样式 */
+      @media screen and (max-width: 480px) {
+        /* 在此添加样式 */
+
+        .gap {
+          display: none;
+        }
+        .nav {
+          display: flex;
+          flex-direction: row;
+          background: #ffc75fa8;
+          height: 15%;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          /* transform: translateY(-50%); */
+        }
+        #Rnav {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+      }
+
+      /* 平板电脑样式 */
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+        /* 在此添加样式 */
+
+        .gap {
+          display: none;
+        }
+        .nav {
+          display: flex;
+          flex-direction: row;
+          background: #ffc75f47;
+          height: 15%;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          /* transform: translateY(-50%); */
+        }
+        #Rnav {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+      }
+
+      /* 笔记本电脑和台式机样式 */
+      @media screen and (min-width: 769px) {
+        /* 在此添加样式 */
+        .nav {
+          display: flex;
+          flex-direction: column;
+          background: #ffc75f3b;
+          height: 100%;
+          width: 15%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          /* transform: translateY(-50%); */
+        }
+      }
+    </style>
+    <title>Welcome to YangJiang</title>
+  </head>
+  <body>
+    <!--导航栏-->
+    <div class="nav">
+      <div id="pict"></div>
+      <div id="Rnav">
+        <a href="#section1"><button class="niceButton">欢迎</button></a>
+        <a href="#section2"><button class="niceButton">美食</button></a>
+        <a href="#section3"> <button class="niceButton">夜景</button></a>
+        <a href="#section4"><button class="niceButton">景点</button></a>
+      </div>
+    </div>
+
+    <div id="section1">
+      <iframe
+        src="./轮播图.html"
+        frameborder="0"
+        height="100%"
+        width="100%"
+        scrolling="no"
+      ></iframe>
+    </div>
+
+    <div id="section2" class="jianbian1">
+      <iframe
+        src="./食物1.html"
+        frameborder="0"
+        height="100%"
+        width="100%"
+        scrolling="no"
+      ></iframe>
+    </div>
+
+    <div id="section3" class="videos jianbian2">
+      <div class="gap"></div>
+      <div class="seevideo">
+        <h1 align="center">欣赏阳江夜景</h1>
+        <video
+          src="./下载.mp4"
+          controls
+          width="100%"
+          height="90%
+        "
+        ></video>
+      </div>
+    </div>
+    <div id="section4" class="jianbian3">
+      <iframe
+        src="./景点介绍.html"
+        frameborder="0"
+        height="100%"
+        width="100%"
+        scrolling="no"
+      ></iframe>
+    </div>
+  </body>
+</html>

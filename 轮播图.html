@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        caret-color: transparent;
+      }
+      img {
+        object-fit: cover;
+      }
+      .slider {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .slider-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slide {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 1s ease;
+      }
+
+      .slide.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+        margin: 0;
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      .next {
+        top: 60px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: #ccc;
+      }
+      .welcome {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 100;
+      }
+      .media {
+        color: aqua;
+        font-size: 100px;
+      }
+      /* 手机样式 */
+      @media screen and (max-width: 480px) {
+        /* 在此添加样式 */
+        .media {
+          font-size: 35px;
+        }
+        .prev {
+          top: 110px;
+        }
+
+        .next {
+          top: 150px;
+        }
+      }
+
+      /* 平板电脑样式 */
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+        /* 在此添加样式 */
+        .media {
+          font-size: 35px;
+        }
+        .prev {
+          top: 110px;
+        }
+
+        .next {
+          top: 150px;
+        }
+      }
+
+      /* 笔记本电脑和台式机样式 */
+      @media screen and (min-width: 769px) {
+        /* 在此添加样式 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="welcome">
+        <h1 class="media">Welcome to YangJiang</h1>
+      </div>
+      <div class="slider-wrapper">
+        <img
+          src="../imge/HaiLingIslang/阳江1.png"
+          alt="Image 1"
+          class="slide"
+        />
+        <img
+          src="../imge/HaiLingIslang/VCG211270908528.webp"
+          alt="Image 2"
+          class="slide"
+        />
+        <img src="../imge/HaiLingIslang/R-C.png" alt="Image 3" class="slide" />
+      </div>
+      <a href="#" class="prev">上一张</a>
+      <a href="#" class="next">下一张</a>
+    </div>
+  </body>
+</html>
+<script>
+  var slider = document.querySelector(".slider");
+  var sliderWrapper = document.querySelector(".slider-wrapper");
+  var slides = document.querySelectorAll(".slide");
+  var prevBtn = document.querySelector(".prev");
+  var nextBtn = document.querySelector(".next");
+  var slideIndex = 0;
+
+  function showSlide(index) {
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+    }
+    slides[index].classList.add("active");
+  }
+
+  function nextSlide() {
+    slideIndex++;
+    if (slideIndex >= slides.length) {
+      slideIndex = 0;
+    }
+    showSlide(slideIndex);
+  }
+
+  function prevSlide() {
+    slideIndex--;
+    if (slideIndex < 0) {
+      slideIndex = slides.length - 1;
+    }
+    showSlide(slideIndex);
+  }
+
+  prevBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    prevSlide();
+  });
+
+  nextBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    nextSlide();
+  });
+
+  showSlide(slideIndex);
+
+  setInterval(function () {
+    nextSlide();
+  }, 5000);
+</script>

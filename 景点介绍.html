@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        /* border: 1px solid indianred; */
+        transform: scale();
+        margin: 0;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+      }
+      .viewing {
+        height: 100vh;
+        width: 100%;
+      }
+      .viewContainer {
+        height: 100%;
+        width: 100%;
+        display: flex;
+      }
+      img {
+        object-fit: contain;
+      }
+      .imgdiv {
+        width: 100%;
+        height: 30%;
+      }
+      .hailing {
+        font-family: cursive;
+
+        color: aqua;
+        font-size: 20px;
+      }
+
+      /* 悬停添加箭头图标 */
+      .niceButton5 {
+        display: inline-block;
+        border-radius: 20px;
+        background-color: #f4511e;
+        border: none;
+        color: #ffff;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 18px;
+        width: 138px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        vertical-align: middle;
+      }
+      .niceButton5 span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .niceButton5 span::after {
+        content: ">";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      .niceButton5:hover span {
+        padding-right: 30px;
+      }
+      .niceButton5:hover span::after {
+        opacity: 1;
+        right: 0;
+      }
+      .gap {
+        width: 20%;
+      }
+      .gap2 {
+        width: 25%;
+      }
+      .option {
+        display: flex;
+      }
+      /* .imgdiv {
+        width: 100vw;
+      } */
+      /* 手机样式 */
+      @media screen and (max-width: 480px) {
+        /* 在此添加样式 */
+        .gap,
+        .gap2 {
+          display: none;
+        }
+        .hailing {
+          font-size: 2%;
+        }
+        .viewing {
+          height: 10%;
+        }
+        .viewContainer {
+          height: 50%;
+        }
+      }
+
+      /* 平板电脑样式 */
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+        /* 在此添加样式 */
+        .gap,
+        .gap2 {
+          display: none;
+        }
+        .hailing {
+          font-size: 20px;
+        }
+        .viewing {
+          height: 10%;
+        }
+        .viewContainer {
+          height: 50%;
+        }
+      }
+
+      /* 笔记本电脑和台式机样式 */
+      @media screen and (min-width: 769px) {
+        /* 在此添加样式 */
+
+        /* .hailing {
+          font-size: 15px;
+        } */
+        /* .viewing {
+          height: 10%;
+        }
+        .viewContainer {
+          height: 50%;
+        } */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="option">
+        <div class="gap"></div>
+        <div>
+          <button id="y1" class="niceButton5">
+            <span>海陵岛 </span>
+          </button>
+          <button id="y2" class="niceButton5">
+            <span>你干嘛</span>
+          </button>
+          <button id="y3" class="niceButton5">
+            <span>鸳鸯湖</span>
+          </button>
+          <button id="y4" class="niceButton5">
+            <span>人民广场</span>
+          </button>
+        </div>
+      </div>
+      <div class="viewContainer">
+        <div class="gap2"></div>
+        <div class="viewing">
+          <div class="imgdiv">
+            <img
+              src="../imge/HaiLingIslang/VCG211270908528.webp"
+              alt=""
+              width="100%"
+            />
+          </div>
+          <div class="hailing">
+            　　享有"南方北戴河"和"东方夏威夷"之美称，被誉为一块未经雕琢的翡翠。四面环海，以水碧、沙净和游海水、住海边、食海鲜、买海味的特色驰名中外。海陵岛全年日照时间长，年平均气温22.8度，年晴天数310天，四季分明，气候宜人，是旅游度假的理想地方。海陵岛位于广东阳江市西南端，是广东第四大岛。1992年6月18日，经广东省人民政府批准设立海陵岛经济开发试验区，辖海陵、闸坡两镇.海陵岛还有丰富的人文和历史景观，如太傅庙、灵谷庙、古炮台、镇海亭、观音阁等10多处，处处都有着一段悲壮动人的故事。十里银滩中段，银海城内还有一座面积6万平方米，中国最大的仿宋建筑――宋城，城内有53座仿宋建筑，无论远观近瞻，都百态千姿，尉为壮观，更让人亲身体会宋王朝的气派雄伟，令人留连忘返，暇思无限。
+          </div>
+        </div>
+        <div class="viewing" style="display: none">
+          <img src="../imge/HaiLingIslang/kunkun.gif" alt="" width="100%" />
+        </div>
+        <div class="viewing" style="display: none">鸳鸯湖</div>
+        <div class="viewing" style="display: none">人民广场</div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const idCollect1 = document.getElementById("y1");
+  const idCollect2 = document.getElementById("y2");
+  const idCollect3 = document.getElementById("y3");
+  const idCollect4 = document.getElementById("y4");
+  const view = document.querySelectorAll(".viewing");
+  const collectarry = [idCollect1, idCollect2, idCollect3, idCollect4];
+  //   view.forEach((content, index00) => {
+  //     if (!index) {
+  //       content.style.display = "none";
+  //     }
+  //   });
+  collectarry.forEach((id, index0) => {
+    id.addEventListener("click", () => {
+      view.forEach((views, index) => {
+        if (index === index0) {
+          views.style.display = "block";
+        } else {
+          views.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
